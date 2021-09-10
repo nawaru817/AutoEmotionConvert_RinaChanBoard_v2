@@ -1,0 +1,41 @@
+#include <iostream>
+using namespace std;
+
+int face[] = {1,3,5,7,9};
+int *pface = face;
+
+int niko[] = {1,13,20,21,32,33,38,39,50,51,56,57,68,69,74,75,86,87,109,111,122,124,149,156,168,173,187,188,189,190};
+int *pniko = niko;
+
+int* faceSelect(int i){
+    if(i == 1){
+        return pface;
+    }
+    
+    if(i == 2){
+        return pniko;
+    }
+}
+
+int faceSize(int i){
+    if(i == 1){
+        int arraySize = sizeof face / sizeof face[0];
+        return arraySize;
+    } else if(i == 2) {
+        int arraySize = sizeof niko / sizeof niko[0];
+        return arraySize;
+    }
+}
+   
+
+int main(void){
+
+    //printf("%d\n",faceSize(1));
+    
+    int swt = 2;
+    
+    for(int i=0; i<faceSize(swt); i++){
+        printf("%d\n",*(faceSelect(swt) + i));
+    }
+    
+}
